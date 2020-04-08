@@ -28,8 +28,7 @@ int main(void)
 	{
 		printf("\nERROR");
 	}
-
-
+/*
 	respuesta = utn_getNumero(&edad,"Edad?\n","Error la edad debe ser desde 0 a 199\n",0,199,2);
 	if(respuesta == 0)
 	{
@@ -49,10 +48,7 @@ int main(void)
 	{
 		printf("\nERROR");
 	}
-
-
-
-
+*/
 	return EXIT_SUCCESS;
 }
 

@@ -38,32 +38,59 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 
 
 
+
+
+
+
 int utn_getCaracter(char* pResultado, char* mensaje,char* mensajeError, char minimo,char maximo,int reintentos)
 {
 	int retorno = -1;
-	char bufferChar;
+	char buffer;
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0)
 	{
 		do
 		{
 			printf("%s",mensaje);
-			fpurge(stdin);//fflush(stdin) Win -- __fpurge(stdin)
-			scanf("%c",&bufferChar);
-			if(bufferChar >= minimo && bufferChar <= maximo)
+			scanf("%c",&buffer);
+			if(buffer >= minimo && buffer <= maximo)
 			{
-				*pResultado = bufferChar;
+				*pResultado = buffer;
 				retorno = 0;
 				break;
 			}
-			else
-			{
-				printf("%s",mensajeError);
-				reintentos--;
-			}
-		}while(reintentos >= 0);
+			printf("%s",mensajeError);
+			reintentos--;
+		}while(reintentos>=0);
+
 	}
 	return retorno;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
