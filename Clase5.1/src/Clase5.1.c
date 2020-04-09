@@ -15,7 +15,7 @@
 #define QTY_EMPLEADOS 3
 
 int imprimirArrayInt(int pArray[],int size);
-
+int ordenar(int pArray[],int size);
 
 int main(void)
 {
@@ -44,7 +44,7 @@ int main(void)
 
 	do
 	{
-		respuesta = utn_getNumero(&opcion, "1-Modificar Edad\n2-Modificar Salario\n3-Mostrar\n6-Salir\n","Error tiene que ser de 1 a 6\n",1,6,2);
+		respuesta = utn_getNumero(&opcion, "1-Modificar Edad\n2-Modificar Salario\n3-Mostrar\n4-Ordenar\n6-Salir\n","Error tiene que ser de 1 a 6\n",1,6,2);
 		if(respuesta == 0)
 		{
 			switch(opcion)
@@ -69,12 +69,48 @@ int main(void)
 					imprimirArrayInt(arrayEdades,QTY_EMPLEADOS);
 					imprimirArrayInt(arraySalarios,QTY_EMPLEADOS);
 					break;
+				case 4:
+					if(ordenar(arrayEdades,QTY_EMPLEADOS) == 0)
+					{
+						printf("\nSIIIIIII ordeno");
+					}
+					break;
+
 			}
 		}
 	}while(opcion != 6);
 
 	return EXIT_SUCCESS;
 }
+
+
+int ordenar(int pArray[],int size)
+{
+	int flagSwap=1;
+	int i;
+	int buffer;
+	int retorno = -1;
+	if(pArray != NULL && size > 0)
+	{
+		while(flagSwap)
+		{
+			flagSwap = 0;
+			for(i = 0 ; i < size-1 ; i++)
+			{
+				if(pArray[i] > pArray[i+1])
+				{
+					flagSwap = 1;
+					buffer = pArray[i];
+					pArray[i] = pArray[i+1];
+					pArray[i+1] = buffer;
+				}
+			}
+		}
+		retorno = 0;
+	}
+	return retorno;
+}
+
 
 int imprimirArrayInt(int pArray[],int size)
 {
