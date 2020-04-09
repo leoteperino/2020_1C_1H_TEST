@@ -76,16 +76,13 @@ int ordenarArrayInt(int* pArray, int limite)
 	int contador=0;
 	int retorno = -1;
 	int buffer;
-	int nuevoLimite;
-
 
 	if(pArray != NULL && limite >= 0)
 	{
-		nuevoLimite = limite - 1;
 		do
 		{
 			flagSwap=0;
-			for(i=0;i<nuevoLimite;i++)
+			for( i=0 ; i<limite - 1 ; i++)
 			{
 				contador++;
 				if(pArray[i] < pArray[i+1])
@@ -96,12 +93,13 @@ int ordenarArrayInt(int* pArray, int limite)
 					pArray[i+1] = buffer;
 				}
 			}
-			nuevoLimite--;
+			limite--;
 		}while(flagSwap);
 		retorno = contador;
 	}
 	return retorno;
 }
+
 
 
 
