@@ -1,12 +1,4 @@
-/*
- ============================================================================
- Name        : Clase6.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,10 +27,10 @@ int main(void)
 	{
 		printf("\n\n Iteraciones : %d\n\n",respuesta);
 	}
-
-
 	return EXIT_SUCCESS;
 }
+
+
 
 /**
  * \brief Imprime a modo DEBUG la informacion de un array de enteros
