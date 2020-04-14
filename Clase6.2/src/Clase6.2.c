@@ -13,6 +13,8 @@
 #include "utn.h"
 #include <string.h>
 
+
+
 int esNumero(char* cadena);
 
 int main(void)
@@ -21,6 +23,8 @@ int main(void)
 	int longitud;
 	int edad;
 	char bufferStr[4096];
+
+
 
 	// NO SE PUEDE string="Jose";
 	strcpy(string,"HOLA MUNDO\n");
@@ -42,24 +46,6 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-int esNumero(char* cadena)
-{
-	int retorno = 1;
-	int i;
-	for(i=0;cadena[i]!='\0';i++)
-	{
-		if(i==0 && cadena[i] == '-')
-		{
-			continue;
-		}
-		if(cadena[i]>'9' || cadena[i]<'0')
-		{
-			retorno = 0;
-			break;
-		}
-	}
-	return retorno;
-}
 
 
 

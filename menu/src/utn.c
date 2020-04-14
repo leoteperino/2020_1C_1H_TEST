@@ -17,7 +17,7 @@
  */
 int esNumero(char* cadena)
 {
-	int retorno = VERDADERO;
+	int retorno = TRUE;
 	int i;
 	for(i=0;cadena[i]!='\0';i++)
 	{
@@ -27,7 +27,7 @@ int esNumero(char* cadena)
 		}
 		if(cadena[i]>'9' || cadena[i]<'0')
 		{
-			retorno = FALSO;
+			retorno = FALSE;
 			break;
 		}
 		//continue

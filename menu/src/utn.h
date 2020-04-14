@@ -8,8 +8,8 @@
 #ifndef UTN_H_
 #define UTN_H_
 
-#define VERDADERO 1
-#define FALSO 0
+#define TRUE 1
+#define FALSE 0
 
 int utn_getNumero(int* pResultado, char* mensaje,char* mensajeError, int minimo,int maximo,int reintentos);
 int utn_getNumeroFlotante(float* pResultado, char* mensaje,char* mensajeError, float minimo,float maximo,int reintentos);

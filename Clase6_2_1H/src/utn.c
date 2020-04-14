@@ -5,7 +5,7 @@
 
 static int esNumerica(char* cadena);
 static int getInt(int* pResultado);
-
+static int myGets(char* cadena, int longitud);
 
 /**
  * \brief 	Lee de stdin hasta que encuentra un '\n' o hasta que haya copiado en cadena
@@ -15,17 +15,9 @@ static int getInt(int* pResultado);
  * \return Retorna 0 (EXITO) si se obtiene una cadena y -1 (ERROR) si no
  *
  */
-int myGets(char* cadena, int longitud)
+static int myGets(char* cadena, int longitud)
 {
-	if(cadena != NULL && longitud >0 && fgets(cadena,longitud,stdin)==cadena)
-	{
-		fpurge(stdin); // fflush o __fpurge
-		if(cadena[strlen(cadena)-1] == '\n')
-		{
-			cadena[strlen(cadena)-1] = '\0';
-		}
-		return 0;
-	}
+
 	return -1;
 }
 
@@ -38,16 +30,7 @@ int myGets(char* cadena, int longitud)
 static int getInt(int* pResultado)
 {
     int retorno=-1;
-    char buffer[64];
 
-    if(pResultado != NULL)
-    {
-    	if(myGets(buffer,sizeof(buffer))==0 && esNumerica(buffer))
-    	{
-			*pResultado = atoi(buffer);
-			retorno = 0;
-		}
-    }
     return retorno;
 }
 
@@ -59,20 +42,8 @@ static int getInt(int* pResultado)
  */
 static int esNumerica(char* cadena)
 {
-	int i=0;
 	int retorno = 1;
-	if(cadena != NULL && strlen(cadena) > 0)
-	{
-		while(cadena[i] != '\0')
-		{
-			if(cadena[i] < '0' || cadena[i] > '9' )
-			{
-				retorno = 0;
-				break;
-			}
-			i++;
-		}
-	}
+
 	return retorno;
 }
 
@@ -88,23 +59,8 @@ static int esNumerica(char* cadena)
  */
 int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos)
 {
-	int bufferInt;
 	int retorno = -1;
-	while(reintentos>0)
-	{
-		reintentos--;
-		printf("%s",mensaje);
-		if(getInt(&bufferInt) == 0)
-		{
-			if(bufferInt >= minimo && bufferInt <= maximo)
-			{
-				*pResultado = bufferInt;
-				retorno = 0;
-				break;
-			}
-		}
-		printf("%s",mensajeError);
-	}
+
 	return retorno;
 }
 
