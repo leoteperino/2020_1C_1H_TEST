@@ -38,6 +38,10 @@ int main(void) {
 	printf("\nSIZE Nombre mide %d ----- auxiliar mide %d",(int)sizeof(nombre),(int)sizeof(auxiliar));
 	printf("\nSTRLEN Nombre mide %d ----- auxiliar mide %d",(int)strnlen(nombre,sizeof(nombre)),(int)strnlen(auxiliar,sizeof(auxiliar)));
 */
+
+	float numero;
+	numero = atof("345.");
+	printf("%f",numero);
 	while(1)
 	{
 		if(utn_getNumero(&auxInt,"NUMERO?\n","ERROR\n",-2,10,2) == 0)
