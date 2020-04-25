@@ -64,7 +64,7 @@ static int esNumerica(char* cadena)
 
 	for( ; cadena[i] != '\0' ; i++)
 	{
-		if(cadena[i] > '9' || cadena[i] < '0')
+		if(cadena[i]>'9'||cadena[i]<'0')
 		{
 			retorno =  0;
 			break;

@@ -63,7 +63,7 @@ static int esNumerica(char* cadena)
 	int retorno = 1;
 	if(cadena != NULL && strlen(cadena) > 0)
 	{
-		while(cadena[i] != '\0')
+		for(i=0 ; cadena[i] != '\0'; i++)
 		{
 			if(i==0 && (cadena[i] == '-' || cadena[i] == '+'))
 			{
@@ -74,7 +74,6 @@ static int esNumerica(char* cadena)
 				retorno = 0;
 				break;
 			}
-			i++;
 		}
 	}
 	return retorno;
@@ -94,7 +93,7 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 {
 	int bufferInt;
 	int retorno = -1;
-	while(reintentos>0)
+	while(reintentos>=0)
 	{
 		reintentos--;
 		printf("%s",mensaje);

@@ -21,7 +21,7 @@ int esNumero(char* cadena)
 	int i;
 	for(i=0;cadena[i]!='\0';i++)
 	{
-		if(i==0 && cadena[i] == '-')
+		if(i==0 && (cadena[i] == '-' || cadena[i] == '+')
 		{
 			continue;
 		}
